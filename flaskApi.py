@@ -40,7 +40,7 @@ def create_user():
 
 # Update user endpoint
 @app.route('/users', methods=['PUT'])
-def update_user():
+def update_user(id):
     user = next((user for user in users if user['id'] == id), None)
     if user:
         user.update(request.get_json())
