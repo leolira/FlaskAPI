@@ -7,7 +7,7 @@ users = [
 ]
 
 def id_generator():
-    return max(users['id'] for user in users)+1
+    return max(user['id'] for user in users)+1
 
 
 app = Flask(__name__)
