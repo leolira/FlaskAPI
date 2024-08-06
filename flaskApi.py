@@ -39,7 +39,7 @@ def create_user():
     return jsonify(new_user, {'message':'User created successfully!'})
 
 # Update user endpoint
-@app.route('/users', methods=['PUT'])
+@app.route('/users/<int:id>', methods=['PUT'])
 def update_user(id):
     user = next((user for user in users if user['id'] == id), None)
     if user:
@@ -49,8 +49,8 @@ def update_user(id):
         return jsonify({'message':'User not found'}), 404
     
 # Delete user endpoint
-@app.route('/users', methods=['DELETE'])
-def delete_user():
+@app.route('/users/<int:id>', methods=['DELETE'])
+def delete_user(id):
     user = next ((user for user in users if user['id'] == id), None)
     if user:
         users.remove(user)
