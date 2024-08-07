@@ -1,4 +1,5 @@
-Simple user api using Python and Flask.
+# FastAPI
+Simple api using python and Flask
 
 JSON structure
 
